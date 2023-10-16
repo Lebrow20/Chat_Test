@@ -14,12 +14,11 @@ continueBtn.onclick = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                location.href = "user.php" 
                 if(data == "success"){
-                   location.href = "user.php" 
+                   location.href = "users.php" 
                 }else{
-                 errorText.style.display = "block";
-                    errorText.textContent = data;  
+                    errorText.textContent = data; 
+                    errorText.style.display = "block";
                 }
             }
         }
