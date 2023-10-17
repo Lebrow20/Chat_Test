@@ -1,6 +1,7 @@
 const form = document.querySelector(".typing-area"),
 inputField = form.querySelector(".input-field"),
-sendBtn = form.querySelector("button");
+sendBtn = form.querySelector("button"),
+$chatBox = document.querySelector(".chat-box");
 
 form.onsubmit = (e)=>{
     e.preventDefault(); //preventing form from submitting
@@ -27,14 +28,12 @@ sendBtn.onclick = ()=>{
 setInterval(()=>{
     //let's start Ajax
     let xhr = new XMLHttpRequest(); //creating XML object
-    xhr.open("GET","php/get-chat.php", true);
+    xhr.open("POST","php/get-chat.php", true);
     xhr.onload = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                if(!searchBar.classList.contains("active")){ //if active not contains in search bar then add this data
-                    usersList.innerHTML = data;
-                }
+                $chatBox.innerHTML = data;
             }
         }
 
