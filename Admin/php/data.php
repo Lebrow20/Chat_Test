@@ -20,7 +20,7 @@
        ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
         $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
                     <div class="content">
-                    <img src="admin.png" alt="">
+                    <img src="face.png" alt="">
                     <div class="details">
                         <span>'.$row['fname'] . " " . $row['lname'].'</span>
                         <p>'. $msg .'</p>
