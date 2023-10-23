@@ -224,9 +224,11 @@ form .name-details .field:last-child{
     color: #468669;
 }
 /*status offline in php*/
-.users-list a .status-dot.offline{
-    color: #ccc;
+.users-list a .status-dot .offline{
+    color: gray;
+
 }
+
 
 /*Chat css code*/
 .chat-area header{

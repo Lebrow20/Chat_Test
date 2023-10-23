@@ -26,7 +26,11 @@
                         <p>'. $msg .'</p>
                     </div>
                     </div>
-                    <div class="status-dot'.$offline.'"><i class="fas fa-circle"></i></div>
+                    <div class="status-dot'.$offline.'">
+                        <img src = "online.ico" hidden/>
+                        <img src = "offline.ico" />
+                    </div>
+                    
                     </a>';
      }
 ?>
