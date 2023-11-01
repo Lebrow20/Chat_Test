@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "../../php/config.php";
+    include_once "config.php";
     $outgoing_id = $_SESSION['unique_id'];
     /**Utiliser pour les admins en lignes dans notre projet */
     $sql = mysqli_query($conn, "SELECT * FROM users WHERE NOT unique_id = {$outgoing_id}");

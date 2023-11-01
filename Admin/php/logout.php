@@ -2,7 +2,7 @@
     session_start();
     if(isset($_SESSION['unique_id'])){
         //if user is logged in then come to this page otherwise go to login page
-        include_once "../../php/config.php";
+        include_once "config.php";
         $logout_id = mysqli_real_escape_string($conn, $_GET['logout_id']);
         if(isset($logout_id)){
             //IF LOGOUT ID IS SET

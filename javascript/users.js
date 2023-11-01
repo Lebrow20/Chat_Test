@@ -18,6 +18,7 @@ searchBar.onkeyup = ()=>{
     }
     //let's start Ajax
     let xhr = new XMLHttpRequest(); //creating XML object
+    /* xhr.open("POST","php/search.php", true); */
     xhr.open("POST","php/search.php", true);
     xhr.onload = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){

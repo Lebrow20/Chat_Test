@@ -34,7 +34,7 @@
 
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
-
+<!-- <?php include_once "header.php";?> -->
 
     <div class="wrapper">
         <section class="users">
@@ -46,14 +46,14 @@
                     $row = mysqli_fetch_assoc($sql);
                 }
             ?>
-                <div  class="content">
+                <div class="content">
                     <img src="admin.png" alt="">
                     <div class="details">
-                        <span id="nom"><?php echo $row['fname'] . " " . $row['lname'] ?></span>
-                        <p id="nom"><?php echo $row['status'] ?></p>
+                        <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
+                        <p><?php echo $row['status'] ?></p>
                     </div>
                 </div>
-                
+                <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select an user to start chat</span>
