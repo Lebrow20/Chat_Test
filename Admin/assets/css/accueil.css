@@ -13,7 +13,7 @@ a{
 ul{
     list-style: none;
 }
-header{
+#menu{
     display: flex;
     background-color: #23242a;
     justify-content: space-around;
@@ -188,10 +188,6 @@ form .name-details .field:last-child{
 :is(.users, .users-list) .details{
     color: #000;
    margin-left: 15px; 
-}
-#nom{
-    color: #ccc;
-    margin-left: 20px;
 }
 
 :is(.users, .users-list) .details span{

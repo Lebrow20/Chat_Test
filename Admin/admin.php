@@ -4,6 +4,13 @@
         header("location: index.php");
     }
 ?>
+<?php
+    include_once "php/config.php";
+    $sql = mysqli_query($conn, "SELECT * FROM admin WHERE unique_id = {$_SESSION['unique_id']}");
+    if(mysqli_num_rows($sql) > 0){
+        $row = mysqli_fetch_assoc($sql);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,22 +23,22 @@
     <title>Chat</title>
 </head>
 <body>
-    <header>
+    <header id="menu">
         <div class="logo">
             <img src="./assets/img/DGI_logo.png" alt="">
-            <a href="assets/accueil.php" class="header_logo">Direction Générale des Impôts</a>
+            <a href="accueil.php" class="header_logo">Direction Générale des Impôts</a>
         </div>
         <nav class="nav" id="nav-menu">
             <ion-icon name="close" class="header_close" id="close-menu"></ion-icon>
 
             <ul class="nav_list">
-                <li class="nav_item"><a href="assets/accueil.php" class="nav_link" style="--cir:#45f3ff">Accueil</a></li>
-                <li class="nav_item"><a href="assets/chat-admin.php" class="nav_link" style="--cir:#45f3ff">Administration</a></li>
+                <li class="nav_item"><a href="accueil.php" class="nav_link" style="--cir:#45f3ff">Accueil</a></li>
+                <li class="nav_item"><a href="chat-admin.php" class="nav_link" style="--cir:#45f3ff">Administration</a></li>
                 <li class="nav_item"><a href="admin.php" class="nav_link" style="--cir:#45f3ff">Utilisateur</a></li>
-                <li class="nav_item"><a href="assets/recherche.php" class="nav_link" style="--cir:#45f3ff">Recherche</a></li>
+                <li class="nav_item"><a href="recherche.php" class="nav_link" style="--cir:#45f3ff">Recherche</a></li>
             </ul>
         </nav>
-
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="logout"><img src="assets/img/deconnexion_16.png" alt="déconnexion"></a>
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
 
@@ -39,18 +46,12 @@
     <div class="wrapper">
         <section class="users">
             <header>
-            <?php
-                include_once "php/config.php";
-                $sql = mysqli_query($conn, "SELECT * FROM admin WHERE unique_id = {$_SESSION['unique_id']}");
-                if(mysqli_num_rows($sql) > 0){
-                    $row = mysqli_fetch_assoc($sql);
-                }
-            ?>
+
                 <div  class="content">
                     <img src="admin.png" alt="">
                     <div class="details">
-                        <span id="nom"><?php echo $row['fname'] . " " . $row['lname'] ?></span>
-                        <p id="nom"><?php echo $row['status'] ?></p>
+                        <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
+                        <p ><?php echo $row['status'] ?></p>
                     </div>
                 </div>
                 

@@ -15,7 +15,7 @@ continueBtn.onclick = ()=>{
                 let data = xhr.response;
                 console.log(data);
                 if(data == "success"){
-                   location.href = "admin.php" 
+                   location.href = "accueil.php";
                 }else{
                     location.href = "assets/erreur.php";
                 }
