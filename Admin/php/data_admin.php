@@ -22,15 +22,16 @@
       }else{
         $status = "<img src = 'online.ico'/>";
       }
-        $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
+        $output .= '<a href="chatAdmin.php?user_id='.$row['unique_id'].'">
                     <div class="content">
-                    <img src="face.png" alt="">
+                    <img src="admin.png" alt="">
                     <div class="details">
                         <span>'.$row['fname'] . " " . $row['lname'].'</span>
                         <p>'. $msg .'</p>
                     </div>
                     </div>
-                    <div class="status-dot">'.$status.'</i></div>
+                    <div class="status-dot">'.$status.'</div>
+                    
                     </a>';
      }
 ?>

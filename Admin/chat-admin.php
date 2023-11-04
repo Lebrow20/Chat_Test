@@ -18,6 +18,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/accueil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <title>Contenu</title>
 </head>
 <body>
@@ -40,8 +42,35 @@
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
     <body>
-        <h2>admin</h2>
-    </body>
+    <div class="wrapper">
+        <section class="users">
+            <header>
+            <?php
+                include_once "php/config.php";
+                $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+                if(mysqli_num_rows($sql) > 0){
+                    $row = mysqli_fetch_assoc($sql);
+                }
+            ?>
+                <div class="content">
+                    <img src="admin.png" alt="">
+                    <div class="details">
+                        <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
+                        <p><?php echo $row['status'] ?></p>
+                    </div>
+                </div>
+            </header>
+            <div class="search">
+                <span class="text">Select an admin to start chat</span>
+                <input type="text" placeholder="Enter name to search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="users-list">
+
+            </div>
+        </section>
+    </div>
+    <script src="javascript/admin.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>  
 </body>
