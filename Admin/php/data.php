@@ -17,16 +17,20 @@
        //($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";
 
        //check user is online or not
-       ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
+       if($row['status'] == "Offline now") {       
+        $status = "<img src = 'offline.ico'/>";
+      }else{
+        $status = "<img src = 'online.ico'/>";
+      }
         $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
                     <div class="content">
-                    <img src="face.png" alt="">
+                    <img src="user.png" alt="">
                     <div class="details">
                         <span>'.$row['fname'] . " " . $row['lname'].'</span>
                         <p>'. $msg .'</p>
                     </div>
                     </div>
-                    <div class="status-dot'.$offline.'"><i class="fas fa-circle"></i></div>
+                    <div class="status-dot">'.$status.'</i></div>
                     </a>';
      }
 ?>

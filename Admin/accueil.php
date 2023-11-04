@@ -21,7 +21,7 @@
     <title>Accueil</title>
 </head>
 <body>
-<header id="menu">
+    <header id="menu">
         <div class="logo">
             <img src="./assets/img/DGI_logo.png" alt="">
             <a href="accueil.php" class="header_logo">Direction Générale des Impôts</a>
@@ -39,7 +39,7 @@
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="logout"><img src="assets/img/deconnexion_16.png" alt="déconnexion"></a>
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
-    <body>
+    
         <h2>Accueil</h2>
     </body>
     <script src="./js/main.js"></script>
