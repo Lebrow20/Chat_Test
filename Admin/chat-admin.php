@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/accueil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <title>Contenu</title>
+    <title>Discussion entre Administration</title>
 </head>
 <body>
 <header id="menu">
@@ -71,7 +71,7 @@
         </section>
     </div>
     <script src="javascript/admin.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>  
 </body>
 </html>

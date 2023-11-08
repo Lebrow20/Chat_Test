@@ -39,10 +39,29 @@
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="logout"><img src="assets/img/deconnexion_16.png" alt="déconnexion"></a>
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
+    <div class="fond">
+        <img src="assets/img/impôts.jpg" alt="">
+        <div class="contenu">
+            <h1>Bienvenue <?php echo $row['fname'] . " " . $row['lname'] ?></h1>
+            <h3><span class="auto-typing"></span></h3>
+        </div>
+    </div>
+        
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        let typed = new Typed('.auto-typing', {
+            strings: [' Ceci est un site web','Pour discuter avec les utilisateurs','Et aussi pour se communiquer avec les autres administrations '],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true,
+            fadeOut: true,
+            fadeOutClass: 'typed-fade-out',
+            fadeOutDelay: 500
+        })
+    </script>
     
-        <h2>Accueil</h2>
-    </body>
-    <script src="./js/main.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>  
 </body>
 </html>

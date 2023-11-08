@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/accueil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <title>Chat</title>
+    <title>Discussion avec les Utilisateurs</title>
 </head>
 <body>
     <header id="menu">
