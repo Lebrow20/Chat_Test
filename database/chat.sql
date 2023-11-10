@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 23 oct. 2023 à 13:37
+-- Généré le : ven. 10 nov. 2023 à 12:12
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -44,7 +44,8 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`admin_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
 (1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Active now'),
 (2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Offline now'),
-(3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', '1234', 'Offline now');
+(3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', '1234', 'Offline now'),
+(4, 1519508519, 'RABEMANANTSOA', 'Rotsy Nandrianina', 'rotsy@gmail.com', '1234', 'Offline now');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,14 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 (41, 1, 2, 'coucou', '2023-10-23'),
 (42, 1578207198, 1519508550, 'de aona', '2023-10-23'),
 (43, 1578207198, 1519508550, 'Salama\r\n', '2023-10-23'),
-(44, 1519508550, 1578207198, 'De aona e\r\n', '2023-10-23');
+(44, 1519508550, 1578207198, 'De aona e\r\n', '2023-10-23'),
+(45, 1519508550, 1213024144, 'Salama tompoko\r\n', '2023-10-31'),
+(46, 1213024144, 1519508550, 'Salama\r\n', '2023-10-31'),
+(47, 1519508550, 777015826, 'Salama tompoko', '2023-11-04'),
+(48, 777015826, 1519508550, 'Manao aona tompoko', '2023-11-04'),
+(49, 1239755405, 1519508550, 'Salut\r\n', '2023-11-04'),
+(50, 1519508550, 1239755405, 'Salama', '2023-11-04'),
+(51, 1239755405, 1519508550, 'Vaovao aminareo ao?', '2023-11-04');
 
 -- --------------------------------------------------------
 
@@ -114,11 +122,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
-(1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', '1234', 'Active now'),
+(1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', '1234', 'Offline now'),
 (2, 1578207198, 'koto', 'kely', 'koto@gmail.com', '1234', 'Active now'),
 (3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', '1234', 'Offline now'),
 (6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', '1234', 'Offline now'),
-(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', '1234', 'Active now');
+(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', '1234', 'Offline now'),
+(8, 1213024144, 'BEMA', 'RANDRIA', 'bema@gmail.com', '1234', 'Offline now');
 
 --
 -- Index pour les tables déchargées
@@ -150,19 +159,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

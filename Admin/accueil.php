@@ -52,7 +52,7 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         let typed = new Typed('.auto-typing', {
-            strings: [' Ceci est un site web','Pour discuter avec les utilisateurs','Et aussi pour se communiquer avec les autres administrations '],
+            strings: ['Connectez-vous,','Discutez,','Progressez :',"C'est ici que la communication prend vie."],
             typeSpeed: 100,
             backSpeed: 100,
             loop: true,

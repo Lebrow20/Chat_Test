@@ -59,6 +59,7 @@
                         <p><?php echo $row['status'] ?></p>
                     </div>
                 </div>
+                <a href="chat-group.php" class="logout">Groupe</a>
             </header>
             <div class="search">
                 <span class="text">Select an admin to start chat</span>
