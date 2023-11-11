@@ -13,8 +13,29 @@
         } 
         // triming message if word are more than 28
         (strlen($result) > 28) ? $msg = substr($result, 0, 28).'...' : $msg = $result; 
-        // adding you: text before msg if login id send msg    
-       //($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";
+        // adding you: text before msg if login id send msg 
+        $you=""; 
+        $id="";
+        $message="";
+        $sql3="SELECT * FROM messages";
+        $query3 = mysqli_query($conn,$sql2);
+        
+        $row3 = mysqli_fetch_assoc($query3);
+        if(mysqli_num_rows($query2) > 0){
+          $id = $row3['outgoing_msg_id'];
+      }
+       if ($outgoing_id == $id){
+        $you = "Vous: ";
+        $message = '<p>'. $you . $msg .'</p>';
+       } else{ 
+          if ($msg=="No message available"){
+              $message = '<p>'. $msg .'</p>';
+          }else{
+            $you = ""; 
+            $message = '<p"><strong>'. $you . $msg .'</strong></p>';
+          }
+       }
+
 
        //check user is online or not
        if($row['status'] == "Offline now") {       
@@ -26,8 +47,8 @@
                     <div class="content">
                     <img src="admin.png" alt="">
                     <div class="details">
-                        <span>'.$row['fname'] . " " . $row['lname'].'</span>
-                        <p>'. $msg .'</p>
+                      <h3 id="mon_span">'.$row['fname'] . " " . $row['lname'].'</h3>
+                      '. $message .'
                     </div>
                     </div>
                     <div class="status-dot">'.$status.'</div>
