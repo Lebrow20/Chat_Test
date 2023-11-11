@@ -19,9 +19,18 @@
                                     </div>
                                 </div>';
                 }else{ //he is a msg receiver
+                    $sql1 = "SELECT * FROM users WHERE unique_id = {$row['outgoing_msg_id']}";
+                    $query1 = mysqli_query($conn, $sql1);
+                    $user="";
+                if(mysqli_num_rows($query1) > 0){
+                     while($row1 = mysqli_fetch_assoc($query1)){
+                        $user= $row1['fname'] . " " . $row1['lname'];
+                     }
+                    }
                     $output .= '<div class="chat incoming">
-                                    <img src="face.png" alt="">
+                                    <img src="admin.png" alt="">
                                     <div class="details">
+                                        <h6>'.$user.'</h6>
                                         <p>'.$row['msg'].'</p>
                                     </div>
                                 </div>';
