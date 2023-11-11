@@ -6,7 +6,7 @@
 ?>
 <?php
     include_once "php/config.php";
-    $sql = mysqli_query($conn, "SELECT * FROM admin WHERE unique_id = {$_SESSION['unique_id']}");
+    $sql = mysqli_query($conn, "SELECT * FROM admin WHERE unique_id = '{$_SESSION['unique_id']}'");
     if(mysqli_num_rows($sql) > 0){
         $row = mysqli_fetch_assoc($sql);
     }
@@ -36,7 +36,7 @@
                 <li class="nav_item"><a href="recherche.php" class="nav_link" style="--cir:#45f3ff">Recherche</a></li>
             </ul>
         </nav>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="logout"><img src="assets/img/deconnexion_16.png" alt="déconnexion"></a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="nav_link" style="--cir:#f0374a"><img src="assets/img/deconnexion_16.png" alt="déconnexion"></a>
         <ion-icon name="menu" class="header_toggle" id="toggle-menu"></ion-icon>
     </header>
     <div class="fond">

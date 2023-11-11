@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 10 nov. 2023 à 12:12
+-- Généré le : sam. 11 nov. 2023 à 06:06
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -42,8 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
-(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Active now'),
-(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Offline now'),
+(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Offline now'),
+(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Active now'),
 (3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', '1234', 'Offline now'),
 (4, 1519508519, 'RABEMANANTSOA', 'Rotsy Nandrianina', 'rotsy@gmail.com', '1234', 'Offline now');
 
@@ -99,7 +99,40 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 (48, 777015826, 1519508550, 'Manao aona tompoko', '2023-11-04'),
 (49, 1239755405, 1519508550, 'Salut\r\n', '2023-11-04'),
 (50, 1519508550, 1239755405, 'Salama', '2023-11-04'),
-(51, 1239755405, 1519508550, 'Vaovao aminareo ao?', '2023-11-04');
+(51, 1239755405, 1519508550, 'Vaovao aminareo ao?', '2023-11-04'),
+(52, 1176273545, 1578207198, 'Salama', '2023-11-11'),
+(53, 1578207198, 1519508550, 'Manao aona tompoko', '2023-11-11'),
+(54, 1519508550, 1578207198, 'Aiza moa ny toerana misy anareo azafady?', '2023-11-11'),
+(55, 1176273545, 1519508550, 'Salama', '2023-11-11'),
+(56, 1519508550, 1176273545, 'De aona ra Jules', '2023-11-11'),
+(57, 1578207198, 1519508550, 'Ety Ambohijatovo tompoko', '2023-11-11'),
+(58, 1519508519, 1578207198, 'Salama tompoko', '2023-11-11');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `msg_group`
+--
+
+CREATE TABLE `msg_group` (
+  `msg_gp_id` int(11) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg_gp` varchar(1000) NOT NULL,
+  `date_msg_gp` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `msg_group`
+--
+
+INSERT INTO `msg_group` (`msg_gp_id`, `outgoing_msg_id`, `msg_gp`, `date_msg_gp`) VALUES
+(1, 1519508550, 'Bonjour\r\n', '2023-11-10'),
+(2, 1519508519, 'Salama\r\n', '2023-11-10'),
+(3, 1176273545, 'Salut', '2023-11-10'),
+(4, 1519508550, 'Vao2 ato?', '2023-11-10'),
+(5, 1519508519, 'Tsy misy fa aminareo ao?', '2023-11-10'),
+(6, 1519508550, 'Misy réunion à 16h', '2023-11-10'),
+(7, 1519508519, 'Ok ary', '2023-11-10');
 
 -- --------------------------------------------------------
 
@@ -123,7 +156,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
 (1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', '1234', 'Offline now'),
-(2, 1578207198, 'koto', 'kely', 'koto@gmail.com', '1234', 'Active now'),
+(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', '1234', 'Active now'),
 (3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', '1234', 'Offline now'),
 (6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', '1234', 'Offline now'),
 (7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', '1234', 'Offline now'),
@@ -146,6 +179,12 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`msg_id`);
 
 --
+-- Index pour la table `msg_group`
+--
+ALTER TABLE `msg_group`
+  ADD PRIMARY KEY (`msg_gp_id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -165,7 +204,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+
+--
+-- AUTO_INCREMENT pour la table `msg_group`
+--
+ALTER TABLE `msg_group`
+  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `users`
