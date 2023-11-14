@@ -42,9 +42,15 @@
       }else{
         $status = "<img src = 'online.ico'/>";
       }
+      $img="";
+      if ($row['img'] == NULL){
+          $img = "face.png";
+      }else{
+          $img = "../User/php/Profile/".$row['img'];
+      }  
         $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
                     <div class="content">
-                    <img src="face.png" alt="">
+                    <img src="'.$img.'" alt="">
                     <div class="details">
                         <h3 id="mon_span">'.$row['fname'] . " " . $row['lname'].'</h3>
                         '. $message .'

@@ -15,9 +15,15 @@
                 if(mysqli_num_rows($sql) > 0){
                     $row = mysqli_fetch_assoc($sql);
                 }
+                $img="";
+                if ($row['img'] == NULL){
+                    $img = "face.png";
+                }else{
+                    $img = "php/Profile/".$row['img'];
+                }
             ?>
                 <div class="content">
-                    <img src="face.png" alt="">
+                    <img src="<?php echo $img ?>" alt="">
                     <div class="details">
                         <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
                         <p><?php echo $row['status'] ?></p>

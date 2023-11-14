@@ -74,6 +74,10 @@ form .name-details .field:last-child{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.form form .image input{
+    font-size: 17px;
+} 
 .form form .button input{
     margin-top: 13px;
     height: 45px;

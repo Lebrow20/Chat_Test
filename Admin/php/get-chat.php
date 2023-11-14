@@ -22,13 +22,19 @@
                     $sql1 = "SELECT * FROM users WHERE unique_id = {$row['outgoing_msg_id']}";
                     $query1 = mysqli_query($conn, $sql1);
                     $user="";
+                    $img="";
                 if(mysqli_num_rows($query1) > 0){
                      while($row1 = mysqli_fetch_assoc($query1)){
                         $user= $row1['fname'] . " " . $row1['lname'];
+                        if ($row1['img'] == NULL){
+                            $img = "face.png";
+                        }else{
+                            $img = "../User/php/Profile/".$row1['img'];
+                        } 
                      }
                     }
                     $output .= '<div class="chat incoming">
-                                    <img src="admin.png" alt="">
+                                    <img src="'.$img.'" alt="">
                                     <div class="details">
                                         <h6>'.$user.'</h6>
                                         <p>'.$row['msg'].'</p>
