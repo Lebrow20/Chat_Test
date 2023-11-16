@@ -153,6 +153,9 @@ form .name-details .field:last-child{
     background: #333;
     border-radius: 5px;
 }
+.users header a{
+    margin: 10px;
+}
 .users .search{
     margin: 20px 0;
     display: flex;
@@ -324,3 +327,39 @@ form .name-details .field:last-child{
     cursor: pointer;
     border-radius: 0 5px 5px 0;
 }
+
+/*Image*/
+.upload{
+    width: 100px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .upload img{
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+  
+  .upload .round{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
+  

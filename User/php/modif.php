@@ -39,10 +39,28 @@
 
 
                     }else{
-                        echo "please select an image file jpeg jpg png";
+                        //let's modif all user data inside table
+                        $sql2 = mysqli_query($conn, "UPDATE users SET fname = '{$fname}', lname = '{$lname}', email = '{$email}'
+                        WHERE unique_id = {$_SESSION['unique_id']}");
+                        if($sql2){ //if data modified
+                        echo "success";
+
+                        }else
+                        {
+                        echo "Something went wrong!";
+                        } 
                     }
                 }else{
-                    echo "please select an image file";
+                     //let's modif all user data inside table
+                     $sql2 = mysqli_query($conn, "UPDATE users SET fname = '{$fname}', lname = '{$lname}', email = '{$email}'
+                                                  WHERE unique_id = {$_SESSION['unique_id']}");
+                            if($sql2){ //if data modified
+                                echo "success";
+            
+                            }else
+                            {
+                                echo "Something went wrong!";
+                            } 
                 }
 
             
