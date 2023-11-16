@@ -43,9 +43,16 @@
       }else{
         $status = "<img src = 'online.ico'/>";
       }
+      //image
+      $img="";
+      if ($row['img'] == NULL){
+          $img = "admin.png";
+      }else{
+          $img = "../Admin/php/Profile/".$row['img'];
+      }
         $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
                     <div class="content">
-                    <img src="admin.png" alt="">
+                    <img src="'.$img.'" alt="">
                     <div class="details">
                       <h3 id="mon_span">'.$row['fname'] . " " . $row['lname'].'</h3>
                       '. $message .'

@@ -34,7 +34,7 @@
             </div>
             <div class="links">
                 <a href="#"></a>
-                <a href="#">Mot de passe oublié?</a>
+                <a href="signup.php">S'inscrire?</a>
             </div>
             <div class="field button">
                 <input id="btn" type="submit" value="Se connecter" name="login" style="--cir:#ff2770">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 11 nov. 2023 à 06:06
+-- Généré le : mar. 14 nov. 2023 à 09:55
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -42,10 +42,24 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
-(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Offline now'),
-(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Active now'),
+(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Active now'),
+(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Offline now'),
 (3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', '1234', 'Offline now'),
 (4, 1519508519, 'RABEMANANTSOA', 'Rotsy Nandrianina', 'rotsy@gmail.com', '1234', 'Offline now');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contenu`
+--
+
+CREATE TABLE `contenu` (
+  `id_contenu` int(11) NOT NULL,
+  `type` varchar(60) NOT NULL,
+  `nom` varchar(60) NOT NULL,
+  `description` text NOT NULL,
+  `date-cont` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,29 +80,6 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `date_msg`) VALUES
-(18, 1578207198, 777015826, 'SALUT', NULL),
-(19, 777015826, 1578207198, 'salut', NULL),
-(20, 1578207198, 777015826, 'ca va ve', NULL),
-(21, 777015826, 1578207198, 'oui cava', NULL),
-(22, 1578207198, 777015826, 'TSARA ZAN', NULL),
-(23, 777015826, 1578207198, 'Yeu', NULL),
-(24, 777015826, 1578207198, 'bye2', NULL),
-(25, 1578207198, 777015826, 'bye!!', NULL),
-(26, 1578207198, 777015826, 'resalut', NULL),
-(27, 777015826, 1578207198, 'salut mec', NULL),
-(28, 777015826, 1578207198, 'ceci est un test de message long que je t\'envoi maintenant', NULL),
-(29, 1578207198, 777015826, 'salut', NULL),
-(30, 777015826, 1578207198, 'cc', NULL),
-(31, 518855283, 1578207198, 'salut bozy', NULL),
-(32, 1578207198, 518855283, 'salut ndry', NULL),
-(33, 1578207198, 777015826, 'akory', NULL),
-(34, 777015826, 1578207198, 'cava', NULL),
-(35, 1519508550, 441549381, 'salama', NULL),
-(36, 441549381, 1519508550, 'salama tompoko', NULL),
-(37, 1519508550, 441549381, '12', NULL),
-(38, 1519508550, 441549381, '121&', NULL),
-(39, 441549381, 1519508550, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccccccccccccccccccccccccccccffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffddddddddddddddddddddddddddddddddd1111111111111111111555555555555554444444444444444444444444444kkkkkkkkkkkkkkkkkkkk', NULL),
-(40, 1578207198, 1519508550, 'salut', NULL),
 (41, 1, 2, 'coucou', '2023-10-23'),
 (42, 1578207198, 1519508550, 'de aona', '2023-10-23'),
 (43, 1578207198, 1519508550, 'Salama\r\n', '2023-10-23'),
@@ -106,7 +97,13 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 (55, 1176273545, 1519508550, 'Salama', '2023-11-11'),
 (56, 1519508550, 1176273545, 'De aona ra Jules', '2023-11-11'),
 (57, 1578207198, 1519508550, 'Ety Ambohijatovo tompoko', '2023-11-11'),
-(58, 1519508519, 1578207198, 'Salama tompoko', '2023-11-11');
+(58, 1519508519, 1578207198, 'Salama tompoko', '2023-11-11'),
+(59, 1239755405, 1176273545, 'Salama Hajaina', '2023-11-11'),
+(60, 1578207198, 1176273545, 'Salama tompoko', '2023-11-11'),
+(61, 1176273545, 1578207198, 'Afaka mahazo information ve azafady?', '2023-11-11'),
+(62, 1578207198, 1176273545, 'Eny tompoko, inona no azo hanampina anao azafady?', '2023-11-11'),
+(63, 1519508550, 1578207198, 'Misaotra tompoko', '2023-11-11'),
+(64, 1519508550, 1187453235, 'Salama\r\n', '2023-11-14');
 
 -- --------------------------------------------------------
 
@@ -132,7 +129,8 @@ INSERT INTO `msg_group` (`msg_gp_id`, `outgoing_msg_id`, `msg_gp`, `date_msg_gp`
 (4, 1519508550, 'Vao2 ato?', '2023-11-10'),
 (5, 1519508519, 'Tsy misy fa aminareo ao?', '2023-11-10'),
 (6, 1519508550, 'Misy réunion à 16h', '2023-11-10'),
-(7, 1519508519, 'Ok ary', '2023-11-10');
+(7, 1519508519, 'Ok ary', '2023-11-10'),
+(8, 1176273545, 'Ok', '2023-11-11');
 
 -- --------------------------------------------------------
 
@@ -146,6 +144,7 @@ CREATE TABLE `users` (
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `img` varchar(400) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -154,13 +153,14 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
-(1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', '1234', 'Offline now'),
-(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', '1234', 'Active now'),
-(3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', '1234', 'Offline now'),
-(6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', '1234', 'Offline now'),
-(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', '1234', 'Offline now'),
-(8, 1213024144, 'BEMA', 'RANDRIA', 'bema@gmail.com', '1234', 'Offline now');
+INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `img`, `password`, `status`) VALUES
+(1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', NULL, '1234', 'Offline now'),
+(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', NULL, '1234', 'Offline now'),
+(3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', NULL, '1234', 'Offline now'),
+(6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', NULL, '1234', 'Offline now'),
+(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', NULL, '1234', 'Offline now'),
+(8, 1213024144, 'BEMA', 'RANDRIA', 'bema@gmail.com', NULL, '1234', 'Offline now'),
+(10, 1187453235, 'Fanilo Ny Av', 'RAB', 'rab@gmail.com', '1699951804FIL7091.JPG', '1234', 'Offline now');
 
 --
 -- Index pour les tables déchargées
@@ -171,6 +171,12 @@ INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `passwor
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Index pour la table `contenu`
+--
+ALTER TABLE `contenu`
+  ADD PRIMARY KEY (`id_contenu`);
 
 --
 -- Index pour la table `messages`
@@ -201,22 +207,28 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT pour la table `contenu`
+--
+ALTER TABLE `contenu`
+  MODIFY `id_contenu` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT pour la table `msg_group`
 --
 ALTER TABLE `msg_group`
-  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
