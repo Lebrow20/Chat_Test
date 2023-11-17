@@ -47,6 +47,18 @@
                 <span>Adresse email</span>
                 <i></i>
             </div>
+            <div id="domaine">Domaine</div>
+            <div class="check">
+                <input type="checkbox" name="ch[]" value="IS">IS 
+                <input type="checkbox" name="ch[]" value="IMP">IMP
+                <input type="checkbox" name="ch[]" value="IRSA">IRSA
+                <input type="checkbox" name="ch[]" value="IPVI">IPVI <br>
+                <input type="checkbox" name="ch[]" value="IR">IR
+                
+                <input type="checkbox" name="ch[]" value="IDH">IDH
+                <input type="checkbox" name="ch[]" value="IFT">IFT &nbsp;
+                <input type="checkbox" name="ch[]" value="IFPB">IFPB
+            </div>
             <div class="inputBox">
                 <input type="password" name="password" id="" required="required">
                 <span>Mot de passe</span>

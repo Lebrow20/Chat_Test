@@ -4,6 +4,7 @@
     $nom = mysqli_real_escape_string($conn, $_POST['nom']);
     $prenom = mysqli_real_escape_string($conn, $_POST['prenom']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    @$ch = $_POST['ch'];
     $password = mysqli_real_escape_string($conn, $_POST['password']);
    
     if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($password)){
@@ -31,10 +32,11 @@
                         if(move_uploaded_file($tmp_name,"Profile/".$new_img_name)){
                             $status = "Active now"; //once user signed up then his status will be active now
                             $random_id = rand(time(),10000000); //creating ramdom id for user
-            
+                            
+                            $domaine = implode(" | ",$ch);
                             //let's insert all user data inside table
-                            $sql2 = mysqli_query($conn, "INSERT INTO admin (unique_id, fname, lname, email,img, password, status)
-                                                VALUES ('{$random_id}','{$nom}','{$prenom}','{$email}','{$new_img_name}','{$password}','{$status}')");
+                            $sql2 = mysqli_query($conn, "INSERT INTO admin (unique_id, fname, lname, email,img, password, status,domaine)
+                                                VALUES ('{$random_id}','{$nom}','{$prenom}','{$email}','{$new_img_name}','{$password}','{$status}','{$domaine}')");
                             if($sql2){ //if data inserted
                                 $sql3 = mysqli_query($conn, "SELECT * FROM admin WHERE email = '{$email}'");
                                 if(mysqli_num_rows($sql3) > 0){

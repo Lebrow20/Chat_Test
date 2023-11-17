@@ -433,7 +433,7 @@ form .name-details .field:last-child{
         margin: 5%;
         width: 420px;
     }
-    .fond img{
+    .fond #impot{
         height: 100vh;
     }
 
@@ -445,7 +445,7 @@ form .name-details .field:last-child{
     position: relative;
     overflow: hidden;
 }
-.fond img{
+.fond #impot{
     background-repeat: no-repeat ;
     width: 100%;
     height: 85vh;
@@ -481,3 +481,36 @@ margin-bottom: 2rem;
 .auto-typing{
     color: #00adb5;
 }
+.upload{
+    position: absolute;
+    margin: auto;
+  }
+  
+  .upload img{
+    border-radius: 50%;
+    border: 3px solid #45f3ff;
+    box-shadow: 0 0 5px var(--cir);
+  }
+  
+  .upload .round{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
