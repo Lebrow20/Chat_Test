@@ -361,5 +361,4 @@ form .name-details .field:last-child{
   
   input[type=file]::-webkit-file-upload-button{
       cursor: pointer;
-  }
-  
+}
