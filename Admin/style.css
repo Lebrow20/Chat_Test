@@ -318,3 +318,17 @@ form .name-details .field:last-child{
     cursor: pointer;
     border-radius: 0 5px 5px 0;
 }
+/*piece jointe msg*/
+input[type="file"]{
+    display: none;
+}
+#sendFile{
+     margin-top: 5px;
+     width: 50px;
+     cursor: pointer;
+     user-select: none;
+
+}
+#sendFile:active{
+    transform: scale(0.9);
+}

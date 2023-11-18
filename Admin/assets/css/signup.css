@@ -306,6 +306,7 @@ box-shadow: 0 0 20px var(--cir);
         padding: 10px 30px;
     }
     .box form .inputBox{
+        width: 100%;
         margin-top: 10px;
         margin-bottom: 4px;
     }
