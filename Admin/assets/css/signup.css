@@ -109,7 +109,8 @@ body{
 .box form .inputBox{
     position: relative;
     width: 300px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 .box .img{
     font-size: 17px;
@@ -125,7 +126,7 @@ body{
 .box form .inputBox input{
     position: relative;
     width: 100%;
-    padding: 20px 10px 10px;
+    padding: 25px 20px 10px;
     background: transparent; 
     outline: none;
     border: none;
@@ -149,10 +150,10 @@ body{
 #domaine{
     /* position: absolute; */
     left: 0;
-    padding: 20px 0px 10px;
+    padding: 0px 0px 10px;
     pointer-events: none;
-    color: #8f8f8f;
-    font-size: 1em;
+    color: #45f3ff;
+    font-size: 0.9em;
     /* letter-spacing: 0.05em; */
     transition: 0.5s;
 }
@@ -297,4 +298,27 @@ box-shadow: 0 0 20px var(--cir);
   input[type=file]::-webkit-file-upload-button{
       cursor: pointer;
   }
-  
+  @media screen and (max-width: 1024px) {
+    .box {
+        height: 600px;
+    }
+    .box form{
+        padding: 10px 30px;
+    }
+    .box form .inputBox{
+        margin-top: 10px;
+        margin-bottom: 4px;
+    }
+    .box form .inputBox input{
+        padding: 20px 10px 5px;
+    } 
+    #domaine{
+        font-size: 0.9em;
+    }
+    .upload{
+    margin: 0;
+    margin-left: 120px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    }
+  }

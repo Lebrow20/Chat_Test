@@ -27,7 +27,7 @@
                      while($row1 = mysqli_fetch_assoc($query1)){
                         $user= $row1['fname'] . " " . $row1['lname'];
                         if ($row1['img'] == NULL){
-                            $img = "admin.png";
+                            $img = "noprofil.jpg";
                         }else{
                             $img = "../Admin/php/Profile/".$row1['img'];
                         }

@@ -18,7 +18,7 @@
                     }
                     $img="";
                     if ($row['img'] == NULL){
-                        $img = "admin.png";
+                        $img = "noprofil.jpg";
                     }else{
                         $img = "../Admin/php/Profile/".$row['img'];
                     } 

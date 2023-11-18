@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 14 nov. 2023 à 09:55
+-- Généré le : sam. 18 nov. 2023 à 11:05
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -33,19 +33,21 @@ CREATE TABLE `admin` (
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `img` varchar(400) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `domaine` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `status`) VALUES
-(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1234', 'Active now'),
-(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', '1234', 'Offline now'),
-(3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', '1234', 'Offline now'),
-(4, 1519508519, 'RABEMANANTSOA', 'Rotsy Nandrianina', 'rotsy@gmail.com', '1234', 'Offline now');
+INSERT INTO `admin` (`admin_id`, `unique_id`, `fname`, `lname`, `email`, `img`, `password`, `status`, `domaine`) VALUES
+(1, 1519508550, 'RAKOTOSON', 'Jules', 'jules@gmail.com', '1700300026pdp1.jpg', '1234', 'Offline now', 'IS | IPVI | IDH | IFT'),
+(2, 1176273545, 'ANDRIANTSOA', 'Anthony', 'anthony@gmail.com', NULL, '1234', 'Offline now', NULL),
+(3, 1239755405, 'ANDRIAMIHANTA', 'Hajaina', 'hajaina@gmail.com', NULL, '1234', 'Offline now', NULL),
+(4, 1519508519, 'RABEMANANTSOA', 'Rotsy Nandrianina', 'rotsy@gmail.com', '1700298956pdp.jpeg', '1234', 'Offline now', 'IRSA | IR | IFPB');
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,17 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 (61, 1176273545, 1578207198, 'Afaka mahazo information ve azafady?', '2023-11-11'),
 (62, 1578207198, 1176273545, 'Eny tompoko, inona no azo hanampina anao azafady?', '2023-11-11'),
 (63, 1519508550, 1578207198, 'Misaotra tompoko', '2023-11-11'),
-(64, 1519508550, 1187453235, 'Salama\r\n', '2023-11-14');
+(64, 1519508550, 1187453235, 'Salama\r\n', '2023-11-14'),
+(65, 1519508519, 363479290, 'Salama tompoko', '2023-11-15'),
+(66, 363479290, 1519508519, 'Salama', '2023-11-15'),
+(67, 1519508519, 1519508550, 'Bonjour', '2023-11-15'),
+(68, 363479290, 149369498, 'Salut', '2023-11-16'),
+(69, 149369498, 363479290, 'Salut', '2023-11-16'),
+(70, 149369498, 1519508550, 'Salut', '2023-11-16'),
+(71, 1519508550, 149369498, 'Salut', '2023-11-16'),
+(72, 149369498, 1519508550, 'Ca va', '2023-11-16'),
+(73, 1519508550, 149369498, 'Oui ca va et toi?', '2023-11-16'),
+(74, 1519508550, 1519508519, 'Salama', '2023-11-18');
 
 -- --------------------------------------------------------
 
@@ -130,7 +142,9 @@ INSERT INTO `msg_group` (`msg_gp_id`, `outgoing_msg_id`, `msg_gp`, `date_msg_gp`
 (5, 1519508519, 'Tsy misy fa aminareo ao?', '2023-11-10'),
 (6, 1519508550, 'Misy réunion à 16h', '2023-11-10'),
 (7, 1519508519, 'Ok ary', '2023-11-10'),
-(8, 1176273545, 'Ok', '2023-11-11');
+(8, 1176273545, 'Ok', '2023-11-11'),
+(9, 1519508519, 'Salama', '2023-11-15'),
+(11, 1519508550, 'Vao2', '2023-11-16');
 
 -- --------------------------------------------------------
 
@@ -155,12 +169,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `img`, `password`, `status`) VALUES
 (1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', NULL, '1234', 'Offline now'),
-(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', NULL, '1234', 'Offline now'),
+(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', NULL, '1234', 'Active now'),
 (3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', NULL, '1234', 'Offline now'),
 (6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', NULL, '1234', 'Offline now'),
-(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', NULL, '1234', 'Offline now'),
-(8, 1213024144, 'BEMA', 'RANDRIA', 'bema@gmail.com', NULL, '1234', 'Offline now'),
-(10, 1187453235, 'Fanilo Ny Av', 'RAB', 'rab@gmail.com', '1699951804FIL7091.JPG', '1234', 'Offline now');
+(7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', NULL, '1234', 'Offline now');
 
 --
 -- Index pour les tables déchargées
@@ -204,7 +216,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=405235184;
 
 --
 -- AUTO_INCREMENT pour la table `contenu`
@@ -216,19 +228,19 @@ ALTER TABLE `contenu`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT pour la table `msg_group`
 --
 ALTER TABLE `msg_group`
-  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -44,7 +44,7 @@
       }
       $img="";
       if ($row['img'] == NULL){
-          $img = "face.png";
+          $img = "noprofil.jpg";
       }else{
           $img = "../User/php/Profile/".$row['img'];
       }  
