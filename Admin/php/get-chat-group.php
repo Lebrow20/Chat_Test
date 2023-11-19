@@ -10,9 +10,15 @@
             while($row = mysqli_fetch_assoc($query)){
 
                 if($row['outgoing_msg_id'] === $outgoing_id){ //if this is equal to then he is a msg sender
+                    $image="";
+                    if($row['img'] != NULL) {
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                    }
+
                     $output .= '<div class="chat outgoing">
                                     <div class="details">
                                         <p>'.$row['msg_gp'].'</p>
+                                        '.$image.'
                                     </div>
                                 </div>';
                 }else{ //he is a msg receiver
@@ -30,13 +36,17 @@
                         }
                      }
                     }
-                    
+                    $image="";
+                    if($row['img'] != NULL) {
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                    }
 
                     $output .= '<div class="chat incoming">
                                     <img src="'.$img.'" alt="">
                                     <div class="details">
                                         <h6>'.$user.'</h6>
                                         <p>'.$row['msg_gp'].'</p>
+                                        '.$image.'
                                     </div>
                                 </div>';
                 }
