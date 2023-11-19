@@ -130,6 +130,9 @@ form .name-details .field:last-child{
     object-fit: cover;
     border-radius: 50%;
 }
+.wrapper #imageSend{
+    border-radius: 10%;
+}
 :is(.users, .users-list) .content{
     display: flex;
     align-items: center;
@@ -361,4 +364,18 @@ form .name-details .field:last-child{
   
   input[type=file]::-webkit-file-upload-button{
       cursor: pointer;
+}
+/*piece jointe msg*/
+input[type="file"]{
+    display: none;
+}
+#sendFile{
+     margin-top: 5px;
+     width: 50px;
+     cursor: pointer;
+     user-select: none;
+
+}
+#sendFile:active{
+    transform: scale(0.9);
 }
