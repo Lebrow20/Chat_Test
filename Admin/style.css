@@ -283,7 +283,7 @@ form .name-details .field:last-child{
     display: flex;
     align-items: flex-end;
 }
-.chat-box .incoming img{
+.chat-box .incoming #pdp{
     height: 35px;
     width: 35px;
 }

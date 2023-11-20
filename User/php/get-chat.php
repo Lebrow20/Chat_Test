@@ -13,14 +13,29 @@
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
                 if($row['outgoing_msg_id'] === $outgoing_id){ //if this is equal to then he is a msg sender
+                    
+                    $messageSend = "";
+                    /* $msg1=""; */
                     $image="";
-                    if($row['img'] != NULL) {
+
+                    if($row['img'] != NULL && $row['msg'] != NULL ) {
                         $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        /* $msg1 = $row ['msg']; */
+                        $messageSend = '<p>'.$row['msg'].'</p>'.$image;
+
+                    }elseif($row['msg'] != NULL && $row['img'] == NULL){
+                        $messageSend = '<p>'.$row['msg'].'</p>';
+
+                    }elseif($row['msg'] == NULL && $row['img'] != NULL){
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $messageSend = $image;
                     }
+                    
+
                     $output .= '<div class="chat outgoing">
                                     <div class="details">
-                                        <p>'.$row['msg'].'</p>
-                                        '.$image.'
+                                        
+                                        '.$messageSend.'
                                     </div>
                                 </div>';
                 }else{ //he is a msg receiver
@@ -38,16 +53,37 @@
                         }
                      }
                     }
+
+                    $messageSend = "";
+                    /* $msg1=""; */
                     $image="";
-                    if($row['img'] != NULL) {
+
+                    if($row['img'] != NULL && $row['msg'] != NULL ) {
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="1000" height="auto" alt="">';
+                        /* $msg1 = $row ['msg']; */
+                        $messageSend = '<p>'.$row['msg'].'</p>'.$image;
+
+                    }elseif($row['msg'] != NULL && $row['img'] == NULL){
+                        $messageSend = '<p>'.$row['msg'].'</p>';
+
+                    }elseif($row['msg'] == NULL && $row['img'] != NULL){
                         $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $messageSend = $image;
                     }
+
+
+                    /* if($row['msg'] != NULL) {
+                        $msg1 = $row ['msg'];
+                        $messageSend = '<p>'.$row['msg'].'</p>'.$image;
+                    }else{
+                        $messageSend = $image;
+                    } */
+
                     $output .= '<div class="chat incoming">
-                                    <img src="'.$img.'" alt="">
+                                    <img id="pdp" src="'.$img.'" alt="">
                                     <div class="details">
-                                        <h6>'.$user.'</h6>
-                                        <p>'.$row['msg'].'</p>
-                                        '.$image.'
+                                        <h6>'.$user.'</h6>                                       
+                                        '.$messageSend.'
                                     </div>
                                 </div>';
                 }
