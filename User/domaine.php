@@ -1,25 +1,24 @@
-<?php 
+<?php
     session_start();
-    if(isset($_SESSION['unique_id'])){
-        //if user is logged in
-        header("location: users.php");
+    if(!isset($_SESSION['unique_id'])){
+        header("location: login.php");
     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="domaine.css">
-    <title>Choix domaine</title>
-</head>
-<body>
-<form action="#">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="domaine.css">
+        <title>Choix domaine</title>
+    </head>
+    <body>
+        <form action="users.php" method="POST">
             
             <div class="container">
                 <h2>Bienvenue cher contribuable</h2>
-                <label >Veuillez choisir le domaine que vous voulez savoir</label>
+                <label >Veuillez choisir le domaine que vous voulez savoir :</label>
                 <label>
                     <input type="radio" name="domaine" value="IS" checked>
                     <span>Impôt Synthétique</span>
@@ -52,11 +51,15 @@
                     <input type="radio" name="domaine" value="IFPB">
                     <span>Impôt Foncier sur les Propriétés Bâtis</span>
                 </label>
+                <label>
+                    <input type="radio" name="domaine" value="aucun">
+                    <span>Aucun</span>
+                </label>
             </div>
         
-        <div class="field button">
-            <input type="submit" value="Commencer la discussion">
-        </div>   
-</form>
-</body>
+            <div class="field button">
+                <input type="submit" value="Commencer la discussion">
+            </div>   
+        </form>
+    </body>
 </html>

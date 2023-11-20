@@ -275,7 +275,7 @@ form .name-details .field:last-child{
     max-width: calc(100% - 130px);
 }
 .outgoing .details p{
-    background: #333;
+    background: #007bff;
     color: #fff;
     border-radius: 18px 18px 0 18px;
 }
@@ -293,9 +293,14 @@ form .name-details .field:last-child{
     max-width: calc(100% - 130px);
 }
 .incoming .details p{
-    color: #333;
-    background: #fff;
+    color: #fff;
+    background: #474646;
     border-radius: 18px 18px 18px 0;
+    width: fit-content;
+}
+#status{
+    color: #1cc277;
+    font-weight: 700;
 }
 .chat-area .typing-area{
     padding: 18px 30px;
@@ -315,7 +320,7 @@ form .name-details .field:last-child{
     width: 55px;
     border: none;
     outline: none;
-    background: #333;
+    background: #007bff;
     color: #fff;
     font-size: 30px;
     cursor: pointer;
