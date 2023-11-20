@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 18 nov. 2023 à 11:05
+-- Généré le : lun. 20 nov. 2023 à 19:22
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -73,7 +73,8 @@ CREATE TABLE `messages` (
   `msg_id` int(11) NOT NULL,
   `incoming_msg_id` int(255) NOT NULL,
   `outgoing_msg_id` int(255) NOT NULL,
-  `msg` varchar(1000) NOT NULL,
+  `msg` varchar(1000) DEFAULT NULL,
+  `img` varchar(400) DEFAULT NULL,
   `date_msg` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -81,41 +82,43 @@ CREATE TABLE `messages` (
 -- Déchargement des données de la table `messages`
 --
 
-INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `date_msg`) VALUES
-(41, 1, 2, 'coucou', '2023-10-23'),
-(42, 1578207198, 1519508550, 'de aona', '2023-10-23'),
-(43, 1578207198, 1519508550, 'Salama\r\n', '2023-10-23'),
-(44, 1519508550, 1578207198, 'De aona e\r\n', '2023-10-23'),
-(45, 1519508550, 1213024144, 'Salama tompoko\r\n', '2023-10-31'),
-(46, 1213024144, 1519508550, 'Salama\r\n', '2023-10-31'),
-(47, 1519508550, 777015826, 'Salama tompoko', '2023-11-04'),
-(48, 777015826, 1519508550, 'Manao aona tompoko', '2023-11-04'),
-(49, 1239755405, 1519508550, 'Salut\r\n', '2023-11-04'),
-(50, 1519508550, 1239755405, 'Salama', '2023-11-04'),
-(51, 1239755405, 1519508550, 'Vaovao aminareo ao?', '2023-11-04'),
-(52, 1176273545, 1578207198, 'Salama', '2023-11-11'),
-(53, 1578207198, 1519508550, 'Manao aona tompoko', '2023-11-11'),
-(54, 1519508550, 1578207198, 'Aiza moa ny toerana misy anareo azafady?', '2023-11-11'),
-(55, 1176273545, 1519508550, 'Salama', '2023-11-11'),
-(56, 1519508550, 1176273545, 'De aona ra Jules', '2023-11-11'),
-(57, 1578207198, 1519508550, 'Ety Ambohijatovo tompoko', '2023-11-11'),
-(58, 1519508519, 1578207198, 'Salama tompoko', '2023-11-11'),
-(59, 1239755405, 1176273545, 'Salama Hajaina', '2023-11-11'),
-(60, 1578207198, 1176273545, 'Salama tompoko', '2023-11-11'),
-(61, 1176273545, 1578207198, 'Afaka mahazo information ve azafady?', '2023-11-11'),
-(62, 1578207198, 1176273545, 'Eny tompoko, inona no azo hanampina anao azafady?', '2023-11-11'),
-(63, 1519508550, 1578207198, 'Misaotra tompoko', '2023-11-11'),
-(64, 1519508550, 1187453235, 'Salama\r\n', '2023-11-14'),
-(65, 1519508519, 363479290, 'Salama tompoko', '2023-11-15'),
-(66, 363479290, 1519508519, 'Salama', '2023-11-15'),
-(67, 1519508519, 1519508550, 'Bonjour', '2023-11-15'),
-(68, 363479290, 149369498, 'Salut', '2023-11-16'),
-(69, 149369498, 363479290, 'Salut', '2023-11-16'),
-(70, 149369498, 1519508550, 'Salut', '2023-11-16'),
-(71, 1519508550, 149369498, 'Salut', '2023-11-16'),
-(72, 149369498, 1519508550, 'Ca va', '2023-11-16'),
-(73, 1519508550, 149369498, 'Oui ca va et toi?', '2023-11-16'),
-(74, 1519508550, 1519508519, 'Salama', '2023-11-18');
+INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `img`, `date_msg`) VALUES
+(41, 1, 2, 'coucou', NULL, '2023-10-23'),
+(42, 1578207198, 1519508550, 'de aona', NULL, '2023-10-23'),
+(43, 1578207198, 1519508550, 'Salama\r\n', NULL, '2023-10-23'),
+(44, 1519508550, 1578207198, 'De aona e\r\n', NULL, '2023-10-23'),
+(45, 1519508550, 1213024144, 'Salama tompoko\r\n', NULL, '2023-10-31'),
+(46, 1213024144, 1519508550, 'Salama\r\n', NULL, '2023-10-31'),
+(47, 1519508550, 777015826, 'Salama tompoko', NULL, '2023-11-04'),
+(48, 777015826, 1519508550, 'Manao aona tompoko', NULL, '2023-11-04'),
+(49, 1239755405, 1519508550, 'Salut\r\n', NULL, '2023-11-04'),
+(50, 1519508550, 1239755405, 'Salama', NULL, '2023-11-04'),
+(51, 1239755405, 1519508550, 'Vaovao aminareo ao?', NULL, '2023-11-04'),
+(52, 1176273545, 1578207198, 'Salama', NULL, '2023-11-11'),
+(53, 1578207198, 1519508550, 'Manao aona tompoko', NULL, '2023-11-11'),
+(54, 1519508550, 1578207198, 'Aiza moa ny toerana misy anareo azafady?', NULL, '2023-11-11'),
+(55, 1176273545, 1519508550, 'Salama', NULL, '2023-11-11'),
+(56, 1519508550, 1176273545, 'De aona ra Jules', NULL, '2023-11-11'),
+(57, 1578207198, 1519508550, 'Ety Ambohijatovo tompoko', NULL, '2023-11-11'),
+(58, 1519508519, 1578207198, 'Salama tompoko', NULL, '2023-11-11'),
+(59, 1239755405, 1176273545, 'Salama Hajaina', NULL, '2023-11-11'),
+(60, 1578207198, 1176273545, 'Salama tompoko', NULL, '2023-11-11'),
+(61, 1176273545, 1578207198, 'Afaka mahazo information ve azafady?', NULL, '2023-11-11'),
+(62, 1578207198, 1176273545, 'Eny tompoko, inona no azo hanampina anao azafady?', NULL, '2023-11-11'),
+(63, 1519508550, 1578207198, 'Misaotra tompoko', NULL, '2023-11-11'),
+(64, 1519508550, 1187453235, 'Salama\r\n', NULL, '2023-11-14'),
+(65, 1519508519, 363479290, 'Salama tompoko', NULL, '2023-11-15'),
+(66, 363479290, 1519508519, 'Salama', NULL, '2023-11-15'),
+(67, 1519508519, 1519508550, 'Bonjour', NULL, '2023-11-15'),
+(68, 363479290, 149369498, 'Salut', NULL, '2023-11-16'),
+(69, 149369498, 363479290, 'Salut', NULL, '2023-11-16'),
+(70, 149369498, 1519508550, 'Salut', NULL, '2023-11-16'),
+(71, 1519508550, 149369498, 'Salut', NULL, '2023-11-16'),
+(72, 149369498, 1519508550, 'Ca va', NULL, '2023-11-16'),
+(73, 1519508550, 149369498, 'Oui ca va et toi?', NULL, '2023-11-16'),
+(74, 1519508550, 1519508519, 'Salama', NULL, '2023-11-18'),
+(113, 1519508550, 1578207198, 'Test d\'image', NULL, '2023-11-20'),
+(114, 1519508550, 1578207198, NULL, '1700467130pdp1.jpg', '2023-11-20');
 
 -- --------------------------------------------------------
 
@@ -126,7 +129,8 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 CREATE TABLE `msg_group` (
   `msg_gp_id` int(11) NOT NULL,
   `outgoing_msg_id` int(255) NOT NULL,
-  `msg_gp` varchar(1000) NOT NULL,
+  `msg_gp` varchar(1000) DEFAULT NULL,
+  `img` varchar(400) DEFAULT NULL,
   `date_msg_gp` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -134,17 +138,18 @@ CREATE TABLE `msg_group` (
 -- Déchargement des données de la table `msg_group`
 --
 
-INSERT INTO `msg_group` (`msg_gp_id`, `outgoing_msg_id`, `msg_gp`, `date_msg_gp`) VALUES
-(1, 1519508550, 'Bonjour\r\n', '2023-11-10'),
-(2, 1519508519, 'Salama\r\n', '2023-11-10'),
-(3, 1176273545, 'Salut', '2023-11-10'),
-(4, 1519508550, 'Vao2 ato?', '2023-11-10'),
-(5, 1519508519, 'Tsy misy fa aminareo ao?', '2023-11-10'),
-(6, 1519508550, 'Misy réunion à 16h', '2023-11-10'),
-(7, 1519508519, 'Ok ary', '2023-11-10'),
-(8, 1176273545, 'Ok', '2023-11-11'),
-(9, 1519508519, 'Salama', '2023-11-15'),
-(11, 1519508550, 'Vao2', '2023-11-16');
+INSERT INTO `msg_group` (`msg_gp_id`, `outgoing_msg_id`, `msg_gp`, `img`, `date_msg_gp`) VALUES
+(1, 1519508550, 'Bonjour\r\n', NULL, '2023-11-10'),
+(2, 1519508519, 'Salama\r\n', NULL, '2023-11-10'),
+(3, 1176273545, 'Salut', NULL, '2023-11-10'),
+(4, 1519508550, 'Vao2 ato?', NULL, '2023-11-10'),
+(5, 1519508519, 'Tsy misy fa aminareo ao?', NULL, '2023-11-10'),
+(6, 1519508550, 'Misy réunion à 16h', NULL, '2023-11-10'),
+(7, 1519508519, 'Ok ary', NULL, '2023-11-10'),
+(8, 1176273545, 'Ok', NULL, '2023-11-11'),
+(9, 1519508519, 'Salama', NULL, '2023-11-15'),
+(11, 1519508550, 'Vao2', NULL, '2023-11-16'),
+(13, 1519508550, 'Salut', NULL, '2023-11-18');
 
 -- --------------------------------------------------------
 
@@ -169,7 +174,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `img`, `password`, `status`) VALUES
 (1, 777015826, 'RABEMANANTSOA Fanilo', 'Avo', 'nyavofanilo.rabe@gmail.com', NULL, '1234', 'Offline now'),
-(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', NULL, '1234', 'Active now'),
+(2, 1578207198, 'KOTO', 'kely', 'koto@gmail.com', NULL, '1234', 'Offline now'),
 (3, 1561109961, 'RAHANTARIVELO', 'Francoise', 'mireille@gmail.com', NULL, '1234', 'Offline now'),
 (6, 518855283, 'Bozy', 'be', 'bozy@gmail.com', NULL, '1234', 'Offline now'),
 (7, 441549381, 'Taniah', 'RANDRIA', 'taniah@gmail.com', NULL, '1234', 'Offline now');
@@ -228,13 +233,13 @@ ALTER TABLE `contenu`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT pour la table `msg_group`
 --
 ALTER TABLE `msg_group`
-  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `msg_gp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `users`
