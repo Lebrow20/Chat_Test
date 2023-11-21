@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         <section class="form signup">
-            <header>Realtime Chat app</header>
+            <header>Inscription</header>
             <form action="#" enctype="multipart/form-data">
                 <div class="error-txt"></div>
                 <div class="upload">
@@ -24,21 +24,21 @@
                 </div>
                 <div class="name-details">
                     <div class="field input">
-                        <label for="">First name</label>
-                        <input type="text" name="fname" placeholder="First name" required>
+                        <label for="">Nom</label>
+                        <input type="text" name="fname" placeholder="Nom" required>
                     </div>
                     <div class="field input">
-                        <label for="">Last name</label>
-                        <input type="text" name="lname" placeholder="Last name" required>
+                        <label for="">Prénom(s)</label>
+                        <input type="text" name="lname" placeholder="Prénom(s)" required>
                     </div>
                 </div>
                     <div class="field input">
-                        <label for="">Email address</label>
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <label for="">Adresse Email</label>
+                        <input type="text" name="email" placeholder="Adresse Email" required>
                     </div>
                     <div class="field input">
-                        <label for="">Password</label>
-                        <input type="password" name="password" placeholder="Enter new password" required>
+                        <label for="">Mot de passe</label>
+                        <input type="password" name="password" placeholder="Mot de passe" required>
                         <i class="fas fa-eye"></i>
                     </div>
 <!--                     <div class="field image">
@@ -46,11 +46,11 @@
                         <input type="file" name="image" required>
                     </div> -->
                     <div class="field button">
-                        <input type="submit" value="Continue to chat">
+                        <input type="submit" value="S'inscrire">
                     </div>
                 
             </form>
-            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
+            <div class="link">Vous avez déjà un compte? <a href="login.php">Se connecter</a></div>
         </section>
     </div>
     <script src="javascript/pass-show-hide.js"></script>

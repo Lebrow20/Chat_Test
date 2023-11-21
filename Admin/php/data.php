@@ -8,8 +8,9 @@
         $row2 = mysqli_fetch_assoc($query2);
         if(mysqli_num_rows($query2) > 0){
             $result = $row2['msg'];
+            $msgImage = $row2['img'];
         }else{
-            $result = "No message available";
+            $result = "Pas de message disponible";
         } 
         // triming message if word are more than 28
         (strlen($result) > 25) ? $msg = substr($result, 0, 23).'...' : $msg = $result; 
@@ -24,15 +25,25 @@
         if(mysqli_num_rows($query2) > 0){
           $id = $row3['outgoing_msg_id'];
       }
-       if ($outgoing_id == $id){
+      if ($outgoing_id == $id){
         $you = "Vous: ";
-        $message = '<p>'. $you . $msg .'</p>';
+        if($msg!=NULL){
+          $message = '<p>'. $you . $msg .'</p>';
+        }elseif($msgImage!=NULL){
+          $message = '<p>Vous avez envoyé une image</p>';
+        }
+        
        } else{ 
-          if ($msg=="No message available"){
+          if ($msg=="Pas de message disponible"){
               $message = '<p>'. $msg .'</p>';
           }else{
-            $you = ""; 
-            $message = '<p"><strong>'. $you . $msg .'</strong></p>';
+            $you = "";
+            if($msg!=NULL){
+              $message = '<p"><strong>'. $you . $msg .'</strong></p>';
+            }elseif($msgImage!=NULL){
+              $message = '<p"><strong>A envoyé une image</strong></p>';
+            } 
+            /* $message = '<p"><strong>'. $you . $msg .'</strong></p>'; */
           }
        }
 

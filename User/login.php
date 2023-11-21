@@ -9,25 +9,25 @@
 <body>
     <div class="wrapper">
         <section class="form login">
-            <header>Realtime Chat app</header>
+            <header>Connexion</header>
             <form action="#">
                 <div class="error-txt"></div>
                     <div class="field input">
-                        <label for="">Email address</label>
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <label for="">Adresse Email</label>
+                        <input type="text" name="email" placeholder="Entrer votre Adresse Email " required>
                     </div>
                     <div class="field input">
-                        <label for="">Password</label>
-                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <label for="">Mot de passe</label>
+                        <input type="password" name="password" placeholder="Entrer votre Mot de passe" required>
                         <i class="fas fa-eye"></i>
                         
                     </div>
                     <div class="field button">
-                        <input type="submit" value="Continue to chat">
+                        <input type="submit" value="Se connecter">
                     </div>
                 
             </form>
-            <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+            <div class="link">Pas encore de compte? <a href="index.php">S'inscrire</a></div>
         </section>
     </div>
     <script src="javascript/pass-show-hide.js"></script>

@@ -126,7 +126,7 @@ body{
 .box form .inputBox input{
     position: relative;
     width: 100%;
-    padding: 25px 20px 10px;
+    padding: 20px 15px 5px;
     background: transparent; 
     outline: none;
     border: none;
@@ -267,7 +267,8 @@ box-shadow: 0 0 20px var(--cir);
 .upload{
     width: 100px;
     position: relative;
-    margin: auto;
+    margin-left: 33% !important;
+    margin-bottom: -20px !important;
   }
   
   .upload img{

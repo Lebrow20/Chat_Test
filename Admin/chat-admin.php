@@ -45,7 +45,7 @@
                 <li class="nav_item"><a href="admin.php" class="nav_link" style="--cir:#45f3ff">Utilisateur</a></li>
                 <li class="nav_item"><a href="recherche.php" class="nav_link" style="--cir:#45f3ff">Recherche</a></li>
                 <li class="nav_item">
-                    <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="nav_link" style="--cir:#f0374a">
+                    <a href="php/logout.php?logout_id=<?php echo $row['unique_id']?>" class="nav_link" title="Déconnexion" style="--cir:#f0374a">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="2 -2.4 16 16">
                             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
                             <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -76,13 +76,13 @@
                         <p id="status"><?php echo $row['status'] ?></p>
                     </div>
                 </div>
-                <a href="chat-group.php" class="logout">Groupe</a>
+                <a href="chat-group.php" class="logout" title="Discuter en Groupe">Groupe</a>
             </header>
             <div class="search">
-                <span class="text">Select an admin to start chat</span>
-                <input type="text" placeholder="Enter name to search...">
+                <span class="text">Choisir un Admin pour discuter</span>
+                <input type="text" placeholder="Entrer le nom à rechercher...">
                 <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#007bff" class="bi bi-search" viewBox="0 0 16 16">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#007bff" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                         </svg>
                 </button>
