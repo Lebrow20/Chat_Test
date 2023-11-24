@@ -3,8 +3,7 @@
         $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['unique_id']}
         OR outgoing_msg_id = {$row['unique_id']}) AND (outgoing_msg_id = {$outgoing_id}
         OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
-        $query2 = mysqli_query($conn,$sql2);
-        
+        $query2 = mysqli_query($conn,$sql2);       
         $row2 = mysqli_fetch_assoc($query2);
         if(mysqli_num_rows($query2) > 0){
             $result = $row2['msg'];
@@ -19,8 +18,7 @@
         $id="";
         $message="";
         $sql3="SELECT * FROM messages";
-        $query3 = mysqli_query($conn,$sql2);
-        
+        $query3 = mysqli_query($conn,$sql2);        
         $row3 = mysqli_fetch_assoc($query3);
         if(mysqli_num_rows($query2) > 0){
           $id = $row3['outgoing_msg_id'];
@@ -31,8 +29,7 @@
           $message = '<p>'. $you . $msg .'</p>';
         }elseif($msgImage!=NULL){
           $message = '<p>Vous avez envoyé une image</p>';
-        }
-        
+        }        
        } else{ 
           if ($msg=="Pas de message disponible"){
               $message = '<p>'. $msg .'</p>';
@@ -46,7 +43,6 @@
             /* $message = '<p"><strong>'. $you . $msg .'</strong></p>'; */
           }
        }
-
        //check user is online or not
        if($row['status'] == "Offline now") {       
         $status = "<img src = 'offline.ico'/>";

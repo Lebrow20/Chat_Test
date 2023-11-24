@@ -6,25 +6,20 @@
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     @$ch = $_POST['ch'];
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-   
+       
     if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($password)){
          //let 's check user email is valid or not
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //if email is valide
             //let's check that email already exist in the database or not
             $sql = mysqli_query($conn, "SELECT email FROM admin WHERE email = '{$email}'");
             if(mysqli_num_rows($sql)>0){ //if email  already exist
-                echo "$email - this email already exist";
-
-            }else{
-                
+                echo "$email - Cet adresse email existe déjà";
+            }else{             
                 if(isset($_FILES['image'])){
-                    $img_name = $_FILES['image']['name'];
-                    
+                    $img_name = $_FILES['image']['name'];                    
                     $tmp_name = $_FILES['image']['tmp_name'];
-
                     $img_explode = explode('.',$img_name);
                     $img_ext = end($img_explode);
-
                     $extensions = ['png','jpeg','jpg','JPG','PNG','JPEG'];
                     if(in_array($img_ext,$extensions)== true){
                         $time = time();
@@ -47,25 +42,20 @@
             
                             }else
                             {
-                                echo "Something went wrong!";
+                                echo "Il y a une erreur!";
                             } 
                         }
-
-
                     }else{
-                        echo "please select an image file jpeg jpg png";
+                        echo "Veuillez sélectionner une image de type jpeg jpg png";
                     }
                 }else{
-                    echo "please select an image file";
+                    echo "Veuillez sélectionner une image";
                 }
-
             }
-
         }else{
-            echo "$email - This is not a valid email";
+            echo "$email - Cet adresse email n'est pas valide";
         }
-
     }else{
-        echo "All input field are required!";
+        echo "Tous les champs sont obligatoires!";
     } 
 ?>

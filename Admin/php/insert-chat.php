@@ -30,12 +30,6 @@
                 }
             }
         }
-            /* if(!empty($message)){
-                $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, date_msg) 
-                                    VALUES ({$incoming_id},{$outgoing_id},'{$message}', NOW())") or die();
-            } */
-        
-
     }else{
         header("../index.php");
         exit();

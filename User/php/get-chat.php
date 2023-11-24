@@ -4,37 +4,29 @@
         include_once "config.php";
         $outgoing_id = mysqli_real_escape_string($conn, $_POST['outgoing_id']);
         $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
-        $output = "";
-        
+        $output = "";     
         $sql = "SELECT * FROM messages 
                 WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
                 OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id ASC  ";
         $query = mysqli_query($conn, $sql);
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_assoc($query)){
-                if($row['outgoing_msg_id'] === $outgoing_id){ //if this is equal to then he is a msg sender
-                    
+                if($row['outgoing_msg_id'] === $outgoing_id){ //if this is equal to then he is a msg sender              
                     $messageSend = "";
-                    /* $msg1=""; */
                     $image="";
-
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
-                        /* $msg1 = $row ['msg']; */
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
 
                     }elseif($row['msg'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
                         $messageSend = $image;
-                    }
-                    
-
+                    }            
                     $output .= '<div class="chat outgoing">
-                                    <div class="details">
-                                        
+                                    <div class="details">                                  
                                         '.$messageSend.'
                                     </div>
                                 </div>';
@@ -53,13 +45,10 @@
                         }
                      }
                     }
-
                     $messageSend = "";
-                    /* $msg1=""; */
                     $image="";
-
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="1000" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
                         /* $msg1 = $row ['msg']; */
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
 
@@ -67,18 +56,9 @@
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
                         $messageSend = $image;
                     }
-
-
-                    /* if($row['msg'] != NULL) {
-                        $msg1 = $row ['msg'];
-                        $messageSend = '<p>'.$row['msg'].'</p>'.$image;
-                    }else{
-                        $messageSend = $image;
-                    } */
-
                     $output .= '<div class="chat incoming">
                                     <img id="pdp" src="'.$img.'" alt="">
                                     <div class="details">

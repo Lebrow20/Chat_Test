@@ -21,13 +21,13 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
                     }elseif($row['msg'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
                         $messageSend = $image;
 
                     }
@@ -55,13 +55,13 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
                     }elseif($row['msg'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="100" height="auto" alt="">';
+                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
                         $messageSend = $image;
 
                     }

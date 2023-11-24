@@ -92,31 +92,29 @@
         </section>
     </div>
     <script>
-function refreshContent() {
-    const searchBar = document.querySelector(".users .search input");
-    const searchTerm = searchBar.value;
+        function refreshContent() {
+            const searchBar = document.querySelector(".users .search input");
+            const searchTerm = searchBar.value;
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'users.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'users.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            const parser = new DOMParser();
-            const newDocument = parser.parseFromString(xhr.responseText, 'text/html');
-            const newContent = newDocument.querySelector('.users .users-list');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const parser = new DOMParser();
+                    const newDocument = parser.parseFromString(xhr.responseText, 'text/html');
+                    const newContent = newDocument.querySelector('.users .users-list');
 
-            const usersList = document.querySelector('.users .users-list');
-            usersList.innerHTML = newContent.innerHTML;
+                    const usersList = document.querySelector('.users .users-list');
+                    usersList.innerHTML = newContent.innerHTML;
+                }
+            };
+
+            xhr.send('domaine=' + encodeURIComponent(searchTerm));
         }
-    };
 
-    xhr.send('domaine=' + encodeURIComponent(searchTerm));
-}
-
-setInterval(refreshContent, 1000);
-
-
+        setInterval(refreshContent, 1000);
     </script>
 <!--     <script>
         function refreshContent() {

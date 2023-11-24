@@ -12,7 +12,7 @@
             //let's check that email already exist in the database or not
             $sql = mysqli_query($conn, "SELECT email FROM users WHERE email = '{$email}'");
             if(mysqli_num_rows($sql)>0){ //if email  already exist
-                echo "$email - this email already exist";
+                echo "$email - Cet adresse email existe déjà";
 
             }else{
                 
@@ -45,25 +45,25 @@
             
                             }else
                             {
-                                echo "Something went wrong!";
+                                echo "Il y a une erreur!";
                             } 
                         }
 
 
                     }else{
-                        echo "please select an image file jpeg jpg png";
+                        echo "Veuillez sélectionner une image de type jpeg jpg png";
                     }
                 }else{
-                    echo "please select an image file";
+                    echo "Veuillez sélectionner une image";
                 }
 
             }
 
         }else{
-            echo "$email - This is not a valid email";
+            echo "$email - Cet adresse email n'est pas valide";
         }
 
     }else{
-        echo "All input field are required!";
+        echo "Tous les champs sont obligatoires!";
     } 
 ?>

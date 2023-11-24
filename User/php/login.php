@@ -17,9 +17,9 @@
                 echo "success";
             }
         }else{
-            echo "Email or Password is incorrect!";
+            echo "Email ou Mot de passe incorrect!";
         }
     }else{
-        echo "All input fields are required";
+        echo "Tous les champs sont obligatoires!";
     }
 ?>
