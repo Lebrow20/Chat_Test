@@ -64,7 +64,7 @@
 
         <div class="contenu">
             <div class="bienvenu">
-                <h1>BIENVENU <br> <span id="nomprenom"><?php echo $row['fname'] . "<br>" . $row['lname'] ?></span></h1>
+                <h1>BIENVENUE <br> <span id="nomprenom"><?php echo $row['fname'] . "<br>" . $row['lname'] ?></span></h1>
                 <span class="upload">
                 <img src="<?php echo $img ?>"  class="profil" alt="" style="--cir:#ff2770">
                 <a href="modif.php" title="Modifier votre Profile">
