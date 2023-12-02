@@ -19,13 +19,17 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg_gp'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
+                        $image='<a href="'.'php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">
+                                </a>';
                         $messageSend = '<p>'.$row['msg_gp'].'</p>'.$image;
                     }elseif($row['msg_gp'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg_gp'].'</p>';
 
                     }elseif($row['msg_gp'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
+                        $image='<a href="'.'php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">
+                                </a>';
                         $messageSend = $image;
 
                     }
@@ -54,13 +58,17 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg_gp'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
+                        $image='<a href="'.'php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">
+                                </a>';
                         $messageSend = '<p>'.$row['msg_gp'].'</p>'.$image;
                     }elseif($row['msg_gp'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg_gp'].'</p>';
 
                     }elseif($row['msg_gp'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">';
+                        $image='<a href="'.'php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'php/message/'.$row['img'].'" width="285" height="auto" alt="">
+                                </a>';
                         $messageSend = $image;
 
                     }

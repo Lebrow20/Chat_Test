@@ -15,14 +15,18 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
+                        $image='<a href="'.'../Admin/php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">
+                                </a>';
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
 
                     }elseif($row['msg'] != NULL && $row['img'] == NULL){
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
+                        $image='<a href="'.'../Admin/php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">
+                                </a>';
                         $messageSend = $image;
                     }            
                     $output .= '<div class="chat outgoing">
@@ -48,7 +52,9 @@
                     $messageSend = "";
                     $image="";
                     if($row['img'] != NULL && $row['msg'] != NULL ) {
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
+                        $image='<a href="'.'../Admin/php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">
+                                </a>';
                         /* $msg1 = $row ['msg']; */
                         $messageSend = '<p>'.$row['msg'].'</p>'.$image;
 
@@ -56,7 +62,9 @@
                         $messageSend = '<p>'.$row['msg'].'</p>';
 
                     }elseif($row['msg'] == NULL && $row['img'] != NULL){
-                        $image='<img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">';
+                        $image='<a href="'.'../Admin/php/message/'.$row['img'].'">
+                                    <img id="imageSend" src="'.'../Admin/php/message/'.$row['img'].'" width="285" height="auto" alt="" onclick="change(this)">
+                                </a>';
                         $messageSend = $image;
                     }
                     $output .= '<div class="chat incoming">
