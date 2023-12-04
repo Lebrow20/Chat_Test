@@ -9,7 +9,7 @@
     if(mysqli_num_rows($sql) > 0){
         include "data.php";
     }else{
-        $output .= "No admin found related to your search term";
+        $output .= "Pas d'admin qui convient à votre recherche";
     }
     echo $output;
 ?>
